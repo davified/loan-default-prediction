@@ -1,0 +1,17 @@
+# editor config
+.idea
+.vscode
+
+# python virtual environment (used by IDE)
+.venv
+venv
+
+# python cache
+__pycache__
+**/*.pyc
+
+# pytest
+.pytest_cache
+
+# jupyter
+.ipynb_checkpoints/
