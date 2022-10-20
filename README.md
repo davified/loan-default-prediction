@@ -6,15 +6,18 @@ An end-to-end example of how to apply software engineering best practices for ML
 
 ```shell script
 # mac users
-scripts/go.sh
+scripts/go-mac.sh
 
-# windows / linux
-# work in progress. in the meantime, please install Docker and Java manually if it's not already installed
+# linux users
+scripts/go-linux-ubuntu.sh
+
+# windows
+# work in progress. in the meantime, please install Docker manually if it's not already installed
 ```
 
 Configure Docker runtime
 ```shell
-# set up colima (docker desktop alternative, no license needed)
+# set up colima (a license-free docker runtime, an alternative to docker desktop)
 https://gist.github.com/jcartledge/0ce114e9719a62a4776569e80088511d
 ```
 
@@ -26,18 +29,21 @@ Configure your IDE to use the python virtual environment (`./.venv/`) created by
 
 ```shell script
 # start docker runtime
-colima start --cpu 8 --memory 8 --disk 100
+colima start
 
 # build image
 docker build -t credit-score-prediction:dev .
 
 # start container (i.e. local dev environment)
-docker run -it --rm -v $(pwd):/code -p 8888:8888 credit-score-prediction:dev bash
+docker run -it --rm -v $(pwd):/code credit-score-prediction:dev bash
 
 ### in the dev container
 
 # train model
 python src/train.py 
+
+# run tests
+scripts/smoke-test-model-training.sh
 
 # start jupyter notebook
 jupyter notebook --ip 0.0.0.0 --allow-root
