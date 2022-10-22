@@ -35,15 +35,24 @@ colima start
 docker build -t credit-score-prediction:dev .
 
 # start container (i.e. local dev environment)
-docker run -it --rm -v $(pwd):/code credit-score-prediction:dev bash
+docker run -it --rm -v $(pwd):/code --network="host" credit-score-prediction:dev bash
 
 ### in the dev container
 
 # train model
 python src/train.py 
 
-# run tests
-scripts/smoke-test-model-training.sh
+# run model training smoke tests
+scripts/tests/smoke-test-model-training.sh
+
+# run api tests
+scripts/tests/api-test.sh
+
+# start API in development mode
+scripts/start-api-locally.sh
+
+# send requests to API locally (run this from another terminal outside of the Docker container, as it uses curl, which we haven't installed)
+scripts/curl-local-api.sh
 
 # start jupyter notebook
 jupyter notebook --ip 0.0.0.0 --allow-root

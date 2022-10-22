@@ -15,14 +15,10 @@ def fit_model(x_train, y_train):
 
 
 def transform_data_for_training(mdf):
-    x = mdf.drop(['Credit_Score'], axis=1).values
-    y = mdf['Credit_Score'].values
+    x = mdf.drop(['Credit_Score'], axis=1)
+    y = mdf['Credit_Score']
     # # Split Data
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42)
-    # # Data Scaling using Robust Scaler
-    ro_scaler = rbScaler()
-    x_train = ro_scaler.fit_transform(x_train)
-    x_test = ro_scaler.fit_transform(x_test)
     return x_test, x_train, y_test, y_train
 
 
