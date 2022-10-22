@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "credit-score-prediction"
+version = "0.1.0"
+description = "An end-to-end example of how to apply software engineering practices for ML training, testing and deployment"
+authors = ["David Tan <davidtan@thoughtworks.com>"]
+
+[tool.poetry.dependencies]
+pandas = "1.1.4"
+scikit-learn = "1.0"
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+jupyter = "1.0.0"
+black = "22.10.0"
+pylint = "2.15.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
