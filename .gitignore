@@ -1,5 +1,6 @@
 # editor config
-.idea
+.idea/*
+!.idea/credit-score-prediction.iml
 .vscode
 
 # python virtual environment (used by IDE)

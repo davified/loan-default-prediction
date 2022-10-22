@@ -2,6 +2,15 @@
 
 An end-to-end example of how to apply software engineering best practices for ML training, testing and deployment.
 
+
+tasks:
+- make src/ directory work (for tests, main script and IDE )
+- use Poetry instead of pip: https://nanthony007.medium.com/stop-using-pip-use-poetry-instead-db7164f4fc72 / see dataeng interview prep
+- setup Dockerfile (for training locally)
+- setup Dockerfile (for API)
+- setup github actions (for training on cloud)
+- use pytest instead of unittest: https://docs.pytest.org/en/7.1.x/how-to/output.html
+
 ## Setup
 
 ```shell script
