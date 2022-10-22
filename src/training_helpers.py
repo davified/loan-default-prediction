@@ -1,15 +1,17 @@
+import os
+
+import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier as rfClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import RobustScaler as rbScaler, LabelEncoder as le
 
 
-def fit_model(x_test, x_train, y_test, y_train):
-    rf = rfClassifier(max_features=14, max_depth=8)
-    rf.fit(x_train, y_train)
-    rf_score = rf.score(x_train, y_train)
-    rf_score_t = rf.score(x_test, y_test)
-    return rf_score_t
+def fit_model(x_train, y_train):
+    model = rfClassifier(max_features=14, max_depth=8)
+    model.fit(x_train, y_train)
+
+    return model
 
 
 def transform_data_for_training(mdf):
@@ -73,3 +75,16 @@ def rename_columns_and_convert_dtypes(data):
         data[col] = data[col].str.replace(r'_+', '')
     for col in columns:
         data[col] = pd.to_numeric(data[col], errors='coerce')
+
+
+def evaluate_model(model, x_test, x_train, y_test, y_train):
+    rf_score = model.score(x_train, y_train)
+    rf_score_test = model.score(x_test, y_test)
+
+    return rf_score_test
+
+
+def save_model(model):
+    target_directory = "artifacts"
+    os.makedirs(target_directory, exist_ok=True)
+    joblib.dump(model, f"{target_directory}/model.joblib")

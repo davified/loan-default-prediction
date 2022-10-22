@@ -16,3 +16,6 @@ __pycache__
 
 # jupyter
 .ipynb_checkpoints/
+
+# training artifacts
+artifacts/
