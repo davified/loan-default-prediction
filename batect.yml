@@ -1,0 +1,38 @@
+containers:
+  dev:
+    build_directory: .
+    volumes:
+      - local: .
+        container: /code
+      - type: cache
+        name: python-dev-dependencies
+        container: /code/.venv
+
+
+tasks:
+  start-dev-container:
+    description: Start containerised development environment
+    run:
+      container: dev
+      command: bash
+
+  smoke-test-model-training:
+    description: Run smoke tests for model training
+    run:
+      container: dev
+      command: scripts/tests/smoke-test-model-training.sh
+
+  api-test:
+    description: Run API tests
+    run:
+      container: dev
+      command: scripts/tests/api-test.sh
+
+  start-api:
+    description: Start API locally
+    run:
+      container: dev
+      command: scripts/start-api-locally.sh
+      ports:
+      - local: 80
+        container: 80
