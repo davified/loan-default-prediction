@@ -1,0 +1,16 @@
+name: CI pipeline for repo
+on: [push]
+jobs:
+  smoke-test-model-training:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run model training smoke test
+        run: ./batect smoke-test-model-training
+
+  api-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run API tests
+        run: ./batect api-test
