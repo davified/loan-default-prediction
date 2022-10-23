@@ -28,6 +28,12 @@ tasks:
       container: dev
       command: scripts/tests/api-test.sh
 
+  train-model:
+    description: Train ML model
+    run:
+      container: dev
+      command: scripts/train-model.sh
+
   start-api:
     description: Start API locally
     run:

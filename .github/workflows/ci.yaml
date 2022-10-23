@@ -16,3 +16,11 @@ jobs:
         run: ./batect smoke-test-model-training
       - name: Run API tests
         run: ./batect api-test
+
+  train-model:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Train model
+        run: ./batect train-model
+    needs: [smoke-test-model-training, api-test]
