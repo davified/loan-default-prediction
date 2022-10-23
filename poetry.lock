@@ -884,6 +884,14 @@ docs = ["furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx (>=4)", "sphinx-
 test = ["appdirs (==1.4.4)", "pytest (>=6)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)"]
 
 [[package]]
+name = "precisely"
+version = "0.1.9"
+description = "Rich matchers, useful for assertions in tests. Inspired by Hamcrest."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "prometheus-client"
 version = "0.15.0"
 description = "Python client for the Prometheus monitoring system."
@@ -1361,7 +1369,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a379cf90ea9ece97dc3e5dc4cf436195637921288c4bde129cbbe26efd7cfed7"
+content-hash = "3c39385b3eaf7f05bbd2434784e45a4b3bf7ec45610594c7503b20e9c59f82bd"
 
 [metadata.files]
 anyio = [
@@ -1857,6 +1865,10 @@ pickleshare = [
 platformdirs = [
     {file = "platformdirs-2.5.2-py3-none-any.whl", hash = "sha256:027d8e83a2d7de06bbac4e5ef7e023c02b863d7ea5d079477e722bb41ab25788"},
     {file = "platformdirs-2.5.2.tar.gz", hash = "sha256:58c8abb07dcb441e6ee4b11d8df0ac856038f944ab98b7be6b27b2a3c7feef19"},
+]
+precisely = [
+    {file = "precisely-0.1.9-py2.py3-none-any.whl", hash = "sha256:7277eed5ffa094658d79eb0ae37b77fc0d481607da1a4511637492671476ee1e"},
+    {file = "precisely-0.1.9.tar.gz", hash = "sha256:c9e7262879324fd192bc13036037a95273c3053dc548df2113a3d51cb9350ed7"},
 ]
 prometheus-client = [
     {file = "prometheus_client-0.15.0-py3-none-any.whl", hash = "sha256:db7c05cbd13a0f79975592d112320f2605a325969b270a94b71dcabc47b931d2"},

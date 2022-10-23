@@ -1,6 +1,7 @@
 import unittest
 
 from fastapi.testclient import TestClient
+from precisely import assert_that, is_mapping, greater_than_or_equal_to, less_than_or_equal_to
 
 from api.app import app
 
@@ -35,4 +36,6 @@ class TestApp(unittest.TestCase):
                                )
 
         self.assertEqual(200, response.status_code)
-        self.assertEqual({"prediction": 0, "request": valid_request_payload}, response.json())
+        assert_that(response.json(), is_mapping({"prediction": greater_than_or_equal_to(0) and less_than_or_equal_to(4),
+                                                 "request": valid_request_payload})
+                    )
