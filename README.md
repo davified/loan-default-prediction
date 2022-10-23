@@ -35,7 +35,7 @@ colima start
 docker build -t credit-score-prediction:dev .
 
 # start container (i.e. local dev environment)
-docker run -it --rm -v $(pwd):/code --network="host" credit-score-prediction:dev bash
+docker run -it --rm -v $(pwd):/code -p 80:80 credit-score-prediction:dev bash
 
 ### in the dev container
 
