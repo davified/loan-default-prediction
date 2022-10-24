@@ -3,7 +3,7 @@ FROM python:3.9.14-slim
 WORKDIR /code
 
 RUN apt-get update
-RUN apt-get -y install gcc python3-dev python3-pip g++
+RUN apt-get -y install gcc
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
