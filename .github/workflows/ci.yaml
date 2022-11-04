@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v3
       - name: Train model
         run: ./batect train-model
-    needs: [smoke-test-model-training, api-test]
+    needs: run-tests
