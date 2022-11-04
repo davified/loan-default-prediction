@@ -1,18 +1,11 @@
 name: CI pipeline for repo
 on: [push]
 jobs:
-  smoke-test-model-training:
+  run-tests:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Run model training smoke test
-        run: ./batect smoke-test-model-training
-
-  api-test:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-      - name: Train model (to create local model artifact needed by API)
         run: ./batect smoke-test-model-training
       - name: Run API tests
         run: ./batect api-test
