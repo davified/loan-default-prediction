@@ -1,17 +1,19 @@
-FROM python:3.11.0-slim
+FROM python:3.10.6-slim AS prod
 
 WORKDIR /code
 
-RUN apt-get update
-RUN apt-get -y install gcc
+RUN apt-get update && apt-get -y install gcc
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 COPY pyproject.toml /code/pyproject.toml
-RUN poetry install
+RUN poetry install --without dev && rm -rf ~/.cache/pypoetry/{cache,artifacts}
 
-# Configure PYTHONPATH so that packages/modules in src are symmetrically available to tests
-# (doesn't include other clients - e.g. IDE, which require this to be set in their own config - e.g. .vscode/settings.json or .idea/xxx.iml)
-ENV PYTHONPATH=/code/src
+COPY . /code
+CMD ["./scripts/start-api-prod.sh"]
+
+FROM prod AS dev
+
+RUN poetry install
 
 CMD ["bash"]
