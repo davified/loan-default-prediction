@@ -1,4 +1,4 @@
-name: CI pipeline for repo
+name: CI pipeline
 on: [push]
 jobs:
   run-tests:

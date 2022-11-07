@@ -27,6 +27,8 @@ tasks:
     run:
       container: dev
       command: scripts/tests/api-test.sh
+    prerequisites:
+      - smoke-test-model-training
 
   train-model:
     description: Train ML model
