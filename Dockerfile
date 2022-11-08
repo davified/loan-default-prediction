@@ -1,4 +1,4 @@
-FROM python:3.10.6-slim AS dev
+FROM python:3.11.0-slim AS dev
 
 WORKDIR /code
 
@@ -12,7 +12,7 @@ RUN poetry export -f requirements.txt >> requirements.txt
 
 CMD ["bash"]
 
-FROM python:3.10.6-slim AS prod
+FROM python:3.11.0-slim AS prod
 
 ADD src scripts /code/
 COPY --from=dev /code/requirements.txt /code
