@@ -2,26 +2,6 @@
 
 An end-to-end example of how to apply software engineering practices for ML training, testing and deployment.
 
-tasks:
-- ✅ make src/ directory work (for tests, main script and IDE )
-- ✅ use Poetry instead of pip: https://nanthony007.medium.com/stop-using-pip-use-poetry-instead-db7164f4fc72
-- ✅ setup Dockerfile (for training locally)
-- ✅ remove poetry.lock and install via docker build again - see if poetry.lock file is created - it's in the image, but runtime volume mount overrides it
-- ✅ setup Dockerfile (for API development)
-- ✅ setup github actions (for training on cloud)
-- ✅ add batect
-- ✅ research: how people ensure cross-platform (M1 and non-M1 macs) compatibility when working with Docker
-- remove ENV PYTHONPATH=/code/src, and make sure everything works (IDE, CLI)
-- ✅ setup Dockerfile (for API deployment)
-- ✅ Refactor Dockerfile (into multi-stage build)
-- make prod image smaller
-- optimize Dockerfile (currently, ADD src runs before poetry install ,and makes everything small)
-- configure Docker/batect cache to speed up 
-- use pytest instead of unittest: https://docs.pytest.org/en/7.1.x/how-to/output.html
-- enhancements:
-  - poetry.lock file is trapped in docker build. other poetry docker best practices: https://github.com/python-poetry/poetry/discussions/1879
-  - add batect caches on CI (https://batect.dev/docs/using-batect-with/ci/github-actions/#caching-between-builds)
-
 ## Setup
 
 ```shell script
