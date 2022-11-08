@@ -2,4 +2,4 @@
 
 set -e
 
-python src/train.py
+python -m train.train

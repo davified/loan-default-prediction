@@ -1,6 +1,6 @@
 import pandas as pd
 
-from training_helpers import fit_model, transform_data_for_training, preprocess_data, save_model, evaluate_model
+from train.training_helpers import fit_model, transform_data_for_training, preprocess_data, save_model, evaluate_model
 
 
 def train_model(data: pd.DataFrame):

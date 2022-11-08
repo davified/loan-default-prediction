@@ -4,10 +4,11 @@ WORKDIR /code
 
 RUN apt-get update && apt-get -y install gcc
 
+# how can we avoid copying src directory over before poetry install? this adds a few minutes to our testing cycle
+ADD pyproject.toml src /code/
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
-COPY pyproject.toml /code/pyproject.toml
-RUN poetry install --without dev && rm -rf ~/.cache/pypoetry/{cache,artifacts}
+RUN poetry install --without dev --no-root && rm -rf ~/.cache/pypoetry/{cache,artifacts}
 
 COPY . /code
 CMD ["./scripts/start-api-prod.sh"]

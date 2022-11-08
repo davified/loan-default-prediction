@@ -3,6 +3,7 @@ name = "credit-score-prediction"
 version = "0.1.0"
 description = "An end-to-end example of how to apply software engineering practices for ML training, testing and deployment"
 authors = ["David Tan <davidtan@thoughtworks.com>"]
+packages = [{include = "train", from = "src"}]
 
 [tool.poetry.dependencies]
 pandas = "1.5.1"

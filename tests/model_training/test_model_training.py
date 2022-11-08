@@ -3,7 +3,7 @@ import unittest
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
-from train import train_model
+from train.train import train_model
 
 
 class TestModelTraining(unittest.TestCase):
