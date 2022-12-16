@@ -7,9 +7,22 @@ containers:
       - type: cache
         name: python-dev-dependencies
         container: /code/.venv
+    build_target: dev
+  prod:
+    build_directory: .
+    volumes:
+      - local: .
+        container: /code
+    build_target: prod
 
 
 tasks:
+  setup:
+    description: Install Python dependencies
+    run:
+      container: dev
+      command: ./scripts/setup.sh
+
   start-dev-container:
     description: Start containerised development environment
     run:
@@ -44,3 +57,12 @@ tasks:
       ports:
       - local: 80
         container: 80
+
+  start-api-prod:
+    description: Start API locally
+    run:
+      container: prod
+      command: scripts/start-api-locally.sh
+      ports:
+        - local: 80
+          container: 80
