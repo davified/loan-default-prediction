@@ -13,14 +13,3 @@ ENV VENV_PATH="/code/.venv" \
 ENV PATH="$VENV_PATH/bin:$PATH"
 
 CMD ["bash"]
-
-FROM python:3.10.6-slim AS prod
-
-# FIXME: get multi-stage build to work when poetry install is decoupled from docker build into ./batect setup
-
-WORKDIR /code
-
-ADD requirements.txt src scripts /code/
-RUN pip install --no-cache-dir -r /code/requirements.txt
-
-CMD ["/code/scripts/start-api-prod.sh"]
