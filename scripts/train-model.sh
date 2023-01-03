@@ -2,4 +2,4 @@
 
 set -e
 
-python -m train.train
+python -m training.train
