@@ -2,4 +2,4 @@
 
 set -e
 
-poetry install --no-root
+poetry install

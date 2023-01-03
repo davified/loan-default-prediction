@@ -1,6 +1,6 @@
 import pandas as pd
 
-from train.training_helpers import fit_model, transform_data_for_training, preprocess_data, save_model, evaluate_model
+from training.training_helpers import fit_model, transform_data_for_training, preprocess_data, save_model, evaluate_model
 
 
 def train_model(data: pd.DataFrame):
@@ -15,5 +15,5 @@ def train_model(data: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    data = pd.read_csv("./data/train.csv", encoding="utf-8", sep=",", low_memory=False)
+    data = pd.read_csv("./data/train.csv", encoding="utf-8")
     model, _ = train_model(data)

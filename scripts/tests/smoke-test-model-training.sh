@@ -2,4 +2,4 @@
 
 set -e
 
-python -m unittest discover tests/model_training
+python -m pytest tests/training

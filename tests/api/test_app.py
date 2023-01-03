@@ -11,6 +11,7 @@ client = TestClient(app)
 class TestApp(unittest.TestCase):
     def test_root(self):
         response = client.get("/")
+
         self.assertEqual(200, response.status_code)
         self.assertEqual({"message": "hello world"}, response.json())
 
