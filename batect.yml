@@ -27,6 +27,8 @@ tasks:
     run:
       container: dev
       command: scripts/tests/smoke-test-model-training.sh
+    prerequisites:
+      - setup
 
   api-test:
     description: Run API tests
