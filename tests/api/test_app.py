@@ -1,5 +1,3 @@
-import unittest
-
 from fastapi.testclient import TestClient
 from precisely import assert_that, is_mapping, greater_than_or_equal_to, less_than_or_equal_to
 
@@ -8,12 +6,12 @@ from api.app import app
 client = TestClient(app)
 
 
-class TestApp(unittest.TestCase):
+class TestApp():
     def test_root(self):
         response = client.get("/")
 
-        self.assertEqual(200, response.status_code)
-        self.assertEqual({"message": "hello world"}, response.json())
+        assert response.status_code == 200
+        assert response.json() == {"message": "hello world"}
 
     def test_predict_should_return_a_prediction_when_given_a_valid_payload(self):
         valid_request_payload = {
@@ -32,11 +30,12 @@ class TestApp(unittest.TestCase):
             "Num_Bank_Accounts": 0,
             "Credit_Utilization_Ratio": 0
         }
+
         response = client.post("/predict/", headers={"Content-Type": "application/json"},
                                json=valid_request_payload,
                                )
 
-        self.assertEqual(200, response.status_code)
+        assert response.status_code == 200
         assert_that(response.json(), is_mapping({"prediction": greater_than_or_equal_to(0) and less_than_or_equal_to(4),
                                                  "request": valid_request_payload})
                     )

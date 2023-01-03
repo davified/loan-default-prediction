@@ -2,4 +2,4 @@
 
 set -e
 
-python -m unittest discover tests/api
+python -m pytest tests/api
