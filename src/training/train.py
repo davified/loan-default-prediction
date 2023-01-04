@@ -15,5 +15,5 @@ def train_model(data: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    data = pd.read_csv("./data/train.csv", encoding="utf-8")
+    data = pd.read_csv("./data/train.csv", encoding="utf-8", low_memory=False)
     model, _ = train_model(data)
