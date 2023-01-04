@@ -52,7 +52,7 @@ scripts/tests/api-test.sh
 scripts/start-api-locally.sh
 
 # send requests to API locally (run this from another terminal outside of the Docker container, as it uses curl, which we haven't installed)
-scripts/curl-local-api.sh
+scripts/request-local-api.sh
 
 # start jupyter notebook
 scripts/start-jupyter.sh
