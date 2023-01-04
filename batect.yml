@@ -43,6 +43,8 @@ tasks:
     run:
       container: dev
       command: scripts/train-model.sh
+    prerequisites:
+      - setup
 
   start-api:
     description: Start API locally
