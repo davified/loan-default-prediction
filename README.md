@@ -55,7 +55,7 @@ scripts/start-api-locally.sh
 scripts/curl-local-api.sh
 
 # start jupyter notebook
-jupyter notebook --ip 0.0.0.0 --allow-root
+scripts/start-jupyter.sh
 ```
 
 ## Sources and attributions

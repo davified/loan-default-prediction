@@ -54,3 +54,12 @@ tasks:
       ports:
       - local: 80
         container: 80
+
+  start-jupyter:
+    description: Start Jupyter Notebook server
+    run:
+      container: dev
+      command: scripts/start-jupyter.sh
+      ports:
+        - local: 8888
+          container: 8888
