@@ -10,3 +10,6 @@ which docker || brew install --cask docker
 
 echo "Installing colima (an open-source license-free container runtime)"
 which colima || brew install colima docker-credential-helper
+
+echo "Installing dependencies on host (so that we can configure a virtual environment for our IDE)"
+./scripts/go/install-dependencies-on-host.sh
