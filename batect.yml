@@ -38,6 +38,12 @@ tasks:
     prerequisites:
       - smoke-test-model-training
 
+  post-deployment-test:
+    description: Run post-deployment tests
+    run:
+      container: dev
+      command: scripts/tests/post-deployment-test.sh
+
   train-model:
     description: Train ML model
     run:
