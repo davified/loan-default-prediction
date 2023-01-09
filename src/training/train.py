@@ -79,6 +79,4 @@ def train_model(data: pd.DataFrame):
 
 if __name__ == "__main__":
     data = pd.read_csv("./data/train.csv")
-    print(data.head(1).to_dict("records"))
-
     train_model(data)

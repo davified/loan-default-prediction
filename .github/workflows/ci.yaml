@@ -16,4 +16,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Train model
         run: ./batect train-model
+      - name: Run model metrics tests
+        run: ./batect model-metrics-test
     needs: run-tests
