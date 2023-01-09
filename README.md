@@ -60,4 +60,4 @@ scripts/start-jupyter.sh
 
 ## Sources and attributions
 
-- original notebook and data: https://www.kaggle.com/code/mohamedsalemmohamed/credit-score-10-classification-algorithms-eda
+- original data: https://www.kaggle.com/competitions/will-they-default-devday19/data

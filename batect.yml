@@ -30,6 +30,12 @@ tasks:
     prerequisites:
       - setup
 
+  model-metrics-test:
+    description: Run model metrics tests
+    run:
+      container: dev
+      command: scripts/tests/model-metrics-test.sh
+
   api-test:
     description: Run API tests
     run:
