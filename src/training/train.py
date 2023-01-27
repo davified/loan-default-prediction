@@ -70,9 +70,6 @@ def train_model(data: pd.DataFrame):
 
     pipeline.fit(X_train, y_train)
 
-    y_pred = pipeline.predict(X_test)
-    print(classification_report(y_test, y_pred))
-
     save_model(pipeline)
     return pipeline
 
