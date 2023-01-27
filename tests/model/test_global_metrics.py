@@ -34,8 +34,8 @@ class TestMetrics:
         pipeline = load_model()
 
         data = pd.read_csv("./data/train.csv", encoding="utf-8", low_memory=False)
-        strata_col_name = "GENDER"
-        stratas = data["GENDER"].unique().tolist()
+        strata_col_name = "OCCUPATION_TYPE"
+        stratas = data["OCCUPATION_TYPE"].unique().tolist()
         y = data["DEFAULT"]
         X = data.drop("DEFAULT", axis=1)
         X_test, X_train, y_test, y_train = train_test_split(X, y, random_state=10)
