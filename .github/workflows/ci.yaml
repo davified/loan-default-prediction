@@ -3,8 +3,15 @@ on: [push]
 jobs:
   run-tests:
     runs-on: ubuntu-20.04
+    env:
+      BATECT_CACHE_TYPE: directory
     steps:
       - uses: actions/checkout@v3
+      - name: Cache dependencies
+        uses: actions/cache@v3.2.3
+        with:
+          path: .batect/caches
+          key: batect-caches-${{ hashFiles('poetry.lock') }}
       - name: Run model training smoke test
         run: ./batect smoke-test-model-training
       - name: Run API tests
@@ -14,6 +21,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - name: Cache dependencies
+        uses: actions/cache@v3.2.3
+        with:
+          path: .batect/caches
+          key: batect-caches-${{ hashFiles('poetry.lock') }}
       - name: Train model
         run: ./batect train-model
       - name: Run model metrics tests
