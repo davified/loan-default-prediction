@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from precisely import assert_that, is_mapping, greater_than_or_equal_to, less_than_or_equal_to, equal_to, any_of
+from precisely import (any_of, assert_that, equal_to, is_mapping)
 
 from api.app import app
 
