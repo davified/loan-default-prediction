@@ -13,9 +13,9 @@ jobs:
           path: .batect/caches
           key: batect-caches-${{ hashFiles('poetry.lock') }}
       - name: Run model training smoke test
-        run: ./batect smoke-test-model-training
+        run: ./batect --output=all smoke-test-model-training
       - name: Run API tests
-        run: ./batect api-test
+        run: ./batect --output=all api-test
 
   train-model:
     runs-on: ubuntu-20.04
@@ -29,7 +29,7 @@ jobs:
           path: .batect/caches
           key: batect-caches-${{ hashFiles('poetry.lock') }}
       - name: Train model
-        run: ./batect train-model
+        run: ./batect --output=all train-model
       - name: Run model metrics tests
-        run: ./batect model-metrics-test
+        run: ./batect --output=all model-metrics-test
     needs: run-tests
