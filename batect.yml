@@ -6,7 +6,9 @@ containers:
         container: /code
       - type: cache
         name: python-dev-dependencies
-        container: /opt/.venv  # this path has to be same as VENV_PATH in Dockerfile
+        container: /opt/.venv  # this path has to be same as VENV_PATH below
+    build_args:
+      VENV_PATH: /opt/.venv
     build_target: dev
 
 tasks:
