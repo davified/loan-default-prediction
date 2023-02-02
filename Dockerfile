@@ -10,6 +10,9 @@ ADD pyproject.toml /code/
 RUN poetry config installer.max-workers 10
 RUN poetry config virtualenvs.create false
 
+ENV VENV_PATH=/opt/.venv
+ENV PATH="$VENV_PATH/bin:$PATH"
+
 CMD ["bash"]
 
 #################### second stage: builder ####################
