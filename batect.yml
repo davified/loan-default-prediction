@@ -6,7 +6,7 @@ containers:
         container: /code
       - type: cache
         name: python-dev-dependencies
-        container: /usr/local/lib/python3.11/site-packages
+        container: /usr/local/lib/python3.11/
     build_target: dev
 
 tasks:
