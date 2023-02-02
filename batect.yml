@@ -6,10 +6,7 @@ containers:
         container: /code
       - type: cache
         name: python-dev-dependencies
-        container: /code/.venv
-#      - type: cache
-#        name: poetry-cache-and-artifacts
-#        container: /root/.cache/pypoetry
+        container: /usr/local/lib/python3.11/
     build_target: dev
 
 tasks:

@@ -21,7 +21,7 @@ Configure Docker runtime
 https://gist.github.com/jcartledge/0ce114e9719a62a4776569e80088511d
 ```
 
-Configure your IDE to use the python virtual environment (`./.venv/`) created by `go.sh` 
+Configure your IDE to use the python virtual environment created by `go.sh` 
 - [PyCharm instructions](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#existing-environment)
 - [VS Code instructions](https://code.visualstudio.com/docs/python/environments)
 
@@ -31,11 +31,11 @@ Configure your IDE to use the python virtual environment (`./.venv/`) created by
 # start docker runtime
 colima start
 
-# build image
-docker build -t credit-score-prediction:dev .
+# install dependencies
+./batect --output=all setup
 
 # start container (i.e. local dev environment)
-docker run -it --rm -v $(pwd):/code -p 80:80 credit-score-prediction:dev bash
+./batect start-dev-container
 
 ### in the dev container
 
