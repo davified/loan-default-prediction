@@ -1,5 +1,5 @@
 #################### first stage: dev ####################
-FROM python:3.11.1-slim AS dev
+FROM python:3.11.2-slim AS dev
 
 WORKDIR /code
 
@@ -23,7 +23,7 @@ COPY poetry.lock /code
 RUN poetry export --without dev --format requirements.txt --output requirements.txt
 
 #################### third stage: prod ####################
-FROM python:3.11.1-slim AS prod
+FROM python:3.11.2-slim AS prod
 
 WORKDIR /code
 COPY src /code/src
