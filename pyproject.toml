@@ -9,7 +9,7 @@ packages = [{include = "training", from = "src"}]
 pandas = "2.0.0"
 scikit-learn = "1.2.2"
 fastapi = "0.85.2"
-pydantic = "1.10.6"
+pydantic = "1.10.7"
 uvicorn = "0.21.1"
 python = "^3.9"
 
