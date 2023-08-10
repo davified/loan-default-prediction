@@ -46,7 +46,7 @@ def train_model(data: pd.DataFrame):
     # create pipeline
     categorical_pipeline = Pipeline([
         ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("encoder", OneHotEncoder(sparse=True, handle_unknown="ignore"))
+        ("encoder", OneHotEncoder(sparse_output=True, handle_unknown="ignore"))
     ])
     ordinal_pipeline = Pipeline([
         ("imputer", SimpleImputer(strategy="most_frequent")),
