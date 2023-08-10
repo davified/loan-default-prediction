@@ -60,7 +60,7 @@ tasks:
     prerequisites:
       - setup
 
-  start-api:
+  start-api-locally:
     description: Start API locally
     run:
       container: dev

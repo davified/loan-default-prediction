@@ -1,11 +1,12 @@
 #################### first stage: dev ####################
-FROM python:3.11.4-slim AS dev
+FROM python:3.11-slim-bookworm AS dev
 
 WORKDIR /code
 
 RUN apt-get update && apt-get -y install gcc
 
-RUN pip install poetry
+RUN pip install --upgrade pip && \
+        pip install poetry
 ADD pyproject.toml /code/
 RUN poetry config installer.max-workers 10
 RUN poetry config virtualenvs.create false
@@ -23,7 +24,7 @@ COPY poetry.lock /code
 RUN poetry export --without dev --format requirements.txt --output requirements.txt
 
 #################### third stage: prod ####################
-FROM python:3.11.4-slim AS prod
+FROM python:3.11-slim-bookworm AS prod
 
 WORKDIR /code
 COPY src /code/src
