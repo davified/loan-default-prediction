@@ -1,5 +1,5 @@
 #################### first stage: dev ####################
-FROM python:3.11-slim-bookworm AS dev
+FROM python:3.9-slim-bookworm AS dev
 
 WORKDIR /code
 
@@ -24,7 +24,7 @@ COPY poetry.lock /code
 RUN poetry export --without dev --format requirements.txt --output requirements.txt
 
 #################### third stage: prod ####################
-FROM python:3.11-slim-bookworm AS prod
+FROM python:3.9-slim-bookworm AS prod
 
 WORKDIR /code
 COPY src /code/src
