@@ -18,7 +18,7 @@ jupyter = "1.0.0"
 black = "23.10.1"
 pylint = "^3.0.2"
 precisely = "^0.1.9"
-pytest = "^7.4.2"
+pytest = "^7.4.3"
 requests = "^2.31.0"
 
 [build-system]
