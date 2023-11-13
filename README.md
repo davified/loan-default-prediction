@@ -4,7 +4,9 @@ An end-to-end example of how to apply software engineering practices for ML trai
 
 ## Setup
 
-1. Install OS-level dependencies
+Run the go script to install pre-requisite dependencies. 
+The go script will install Python 3 and Poetry, and create a virtual environment on the host. 
+This will make it easier to configure our IDE to know about the Python interpreter for this project.   
 
 ```shell script
 # mac users
@@ -14,8 +16,12 @@ scripts/go/go-mac.sh
 scripts/go/go-linux-ubuntu.sh
 
 # windows
-scripts\go\install_choco.ps1
-scripts\go\install.bat
+# 1. Download and install Python3 if not installed: https://www.python.org/downloads/release/python-31011/
+#    - During installation, when prompted, select "Add Python to PATH"
+# 2. In Windows explorer/Search, go 'Manage App Execution Aliases' and turn off 'App Installer' for python. This resolves the issue where the `python` executable is not found in the PATH
+# 3. Run the go script in the Powershell or Command Prompt Terminal
+.\scripts\go\go-windows.bat
+# Note: if you see a HTTPSConnectionPool read timed out error, just run this command a few more times until poetry install succeeds
 ```
 
 2. Install and configure Docker runtime
@@ -40,7 +46,7 @@ Typically, the commands that you've just run would be part of a team's go script
 Build and start local development environment.
 
 ```shell
-# start docker runtime
+# ensure Docker runtime is started (either via Docker Desktop or colima). If using colima:
 colima start
 
 # install dependencies in local dev image
