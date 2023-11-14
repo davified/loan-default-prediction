@@ -11,5 +11,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 echo "Installing Python 3 if it's not installed..."
 which python3 || brew install python3
 
+echo "Installing docker if it's not installed..."
+which docker || brew install --cask docker
+
+echo "Installing java (needed by batect) if it's not installed..."
+which java || brew install --cask adoptopenjdk
+
 echo "Installing dependencies on host (so that we can configure a virtual environment for our IDE)"
 ./scripts/go/install-dependencies-on-host.sh
