@@ -4,6 +4,9 @@ IF %ERRORLEVEL% EQU 0 (ECHO "pipx is installed") ELSE (python -m pip install --u
 where poetry
 IF %ERRORLEVEL% EQU 0 (ECHO "poetry is installed") ELSE (pip install poetry)
 
+where java
+IF %ERRORLEVEL% EQU 0 (ECHO "java is installed") ELSE (winget install Microsoft.OpenJDK.21)
+
 poetry config virtualenvs.in-project false
 
 ECHO "Installing dependencies..."
