@@ -29,7 +29,9 @@ scripts/go/go-linux-ubuntu.sh
 - Option 1: Use **Docker Desktop**, if you have a Docker Desktop license, or are eligible to use it for free, e.g. for personal or education purposes (see [Docker Desktop license agreement](https://docs.docker.com/subscription/desktop-license/))
     - Follow steps here: https://docs.docker.com/desktop/
 - Option 2: Use **Colima** (a license-free docker runtime, an alternative to docker desktop). This is useful if you want to adapt the dependency management setup in this repo in a commercial setting where Docker licenses aren't available.
-    - Follow steps here: https://gist.github.com/jcartledge/0ce114e9719a62a4776569e80088511d
+    - Follow steps here: 
+      - https://gist.github.com/jcartledge/0ce114e9719a62a4776569e80088511d
+      - https://github.com/abiosoft/colima
 
 > ** Note **
 For this exercise, we will use Option 1 (colima) to demonstrate how to use docker containers in cases where Docker Desktop licenses aren't available.
