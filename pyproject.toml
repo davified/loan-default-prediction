@@ -12,6 +12,7 @@ fastapi = "0.104.1"
 pydantic = "2.5.1"
 uvicorn = "0.24.0.post1"
 python = "^3.9"
+httpx = "^0.25.1"
 
 [tool.poetry.dev-dependencies]
 jupyter = "1.0.0"
