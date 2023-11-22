@@ -1,9 +1,9 @@
 #################### first stage: dev ####################
-FROM python:3.12-slim-bookworm AS dev
+FROM python:3.10-slim-bookworm AS dev
 
 WORKDIR /code
 
-RUN apt-get update && apt-get -y install gcc
+RUN apt-get update && apt-get -y install gcc g++
 
 RUN pip install --upgrade pip && \
         pip install poetry
@@ -24,7 +24,7 @@ COPY poetry.lock /code
 RUN poetry export --without dev --format requirements.txt --output requirements.txt
 
 #################### third stage: prod ####################
-FROM python:3.12-slim-bookworm AS prod
+FROM python:3.10-slim-bookworm AS prod
 
 WORKDIR /code
 COPY src /code/src
