@@ -6,11 +6,12 @@ from training.train import train_model
 
 def test_training_smoke_test():
     data = pd.read_csv("/code/data/train.csv", encoding="utf-8", low_memory=False)
-
-    g = data.groupby('DEFAULT')
-    test_sample_size = 10
-    test_data = g.apply(lambda df: df.head(test_sample_size).reset_index(drop=True)).reset_index(drop=True)
+    # group by target column to ensure we train on data that contains all target labels:
+    test_data = data.groupby('DEFAULT').apply(lambda df: df.head(10)).reset_index(drop=True)
 
     pipeline = train_model(test_data)
 
-    assert isinstance(pipeline, Pipeline)
+    predictions = pipeline.predict(test_data)
+    valid_predictions = {0, 1}
+    assert valid_predictions.issubset(predictions)
+
