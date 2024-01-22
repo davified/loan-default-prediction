@@ -6,7 +6,7 @@ authors = ["David Tan <davidtan@thoughtworks.com>"]
 packages = [{include = "training", from = "src"}]
 
 [tool.poetry.dependencies]
-pandas = "2.1.4"
+pandas = "2.2.0"
 scikit-learn = "1.4.0"
 fastapi = "0.109.0"
 pydantic = "2.5.3"
