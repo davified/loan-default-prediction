@@ -10,7 +10,7 @@ pandas = "2.2.0"
 scikit-learn = "1.4.0"
 fastapi = "0.109.0"
 pydantic = "2.5.3"
-uvicorn = "0.26.0"
+uvicorn = "0.27.0"
 python = "^3.9"
 httpx = "^0.26.0"
 
