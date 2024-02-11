@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "credit-score-prediction"
+name = "loan-default-prediction"
 version = "0.1.0"
 description = "An end-to-end example of how to apply software engineering practices for ML training, testing and deployment"
 authors = ["David Tan <davidtan@thoughtworks.com>"]
