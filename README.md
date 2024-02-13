@@ -1,6 +1,7 @@
-# Credit Score Prediction
+# Loan Default Prediction
 
 An end-to-end example of how to apply software engineering practices for ML training, testing and deployment.
+The repo trains and serves an ML model to predict the likelihood of loan defaults.
 
 ## Setup
 
