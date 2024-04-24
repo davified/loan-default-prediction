@@ -16,7 +16,7 @@ httpx = "^0.27.0"
 
 [tool.poetry.dev-dependencies]
 jupyter = "1.0.0"
-black = "24.4.0"
+black = "24.4.1"
 pylint = "^3.1.0"
 precisely = "^0.1.9"
 pytest = "^8.1.1"
