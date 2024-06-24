@@ -8,8 +8,15 @@ which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homeb
 # Prevent homebrew from running brew update --auto-update when running brew install, which can take quite long if user has many outdated packages
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-echo "Installing Python 3 if it's not installed..."
-which python3 || brew install python3
+echo "Installed pyenv as we need to target a specific version due to library dependancies"
+brew install pyenv
+
+echo "Installing 3.10 and setting to use locally"
+pyenv install 3.10.0
+pyenv local 3.10.0
+
+echo "Setting Poetry to use this for the Poetry project"
+poetry env use 3.10.10
 
 echo "Installing docker if it's not installed..."
 which docker || brew install --cask docker
