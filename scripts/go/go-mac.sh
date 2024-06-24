@@ -8,15 +8,23 @@ which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homeb
 # Prevent homebrew from running brew update --auto-update when running brew install, which can take quite long if user has many outdated packages
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-echo "Installed pyenv as we need to target a specific version due to library dependancies"
-brew install pyenv
+echo "Installing pyenv if it's not installed"
+if command -v pyenv &> /dev/null; then
+  PYENV_VERSION_INSTALLED=$(pyenv --version | awk '{print $2}')
+  echo "pyenv is already installed (version: $PYENV_VERSION_INSTALLED). Skipping installation"
+else
+  export PYENV_GIT_TAG="v2.4.0"
+  echo "Installing pyenv $PYENV_VERSION_TARGET"
+  curl https://pyenv.run | bash
+fi
 
-echo "Installing 3.10 and setting to use locally"
-pyenv install 3.10.0
-pyenv local 3.10.0
+echo "Installing Python 3.10 and setting to use locally"
+PYTHON_VERSION="3.10.12"
+pyenv install "$PYTHON_VERSION" --skip-existing
+pyenv local "$PYTHON_VERSION"
 
-echo "Setting Poetry to use this for the Poetry project"
-poetry env use 3.10.10
+./scripts/configure-pyenv.sh
+echo "Using python $(python3 --version)"
 
 echo "Installing docker if it's not installed..."
 which docker || brew install --cask docker
