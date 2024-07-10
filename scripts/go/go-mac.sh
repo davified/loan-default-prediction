@@ -14,16 +14,19 @@ if command -v pyenv &> /dev/null; then
   echo "pyenv is already installed (version: $PYENV_VERSION_INSTALLED). Skipping installation"
 else
   export PYENV_GIT_TAG="v2.4.0"
-  echo "Installing pyenv $PYENV_VERSION_TARGET"
+  echo "Installing pyenv $PYENV_GIT_TAG"
   curl https://pyenv.run | bash
 fi
 
-echo "Installing Python 3.10 and setting to use locally"
+echo "Configuring pyenv"
+./scripts/configure-pyenv.sh
+source ~/.bashrc
+
 PYTHON_VERSION="3.10.12"
+echo "Installing Python $PYTHON_VERSION and setting to use locally"
 pyenv install "$PYTHON_VERSION" --skip-existing
 pyenv local "$PYTHON_VERSION"
 
-./scripts/configure-pyenv.sh
 echo "Using python $(python3 --version)"
 
 echo "Installing docker if it's not installed..."
