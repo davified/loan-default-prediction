@@ -8,7 +8,7 @@ packages = [{include = "training", from = "src"}]
 [tool.poetry.dependencies]
 pandas = "2.2.2"
 scikit-learn = "1.5.1"
-fastapi = "0.112.0"
+fastapi = "0.112.1"
 pydantic = "2.8.2"
 uvicorn = "0.30.6"
 python = "^3.9"
