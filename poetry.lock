@@ -664,14 +664,14 @@ tests = ["asttokens", "littleutils", "pytest", "rich ; python_version >= \"3.11\
 
 [[package]]
 name = "fastapi"
-version = "0.124.2"
+version = "0.124.4"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "fastapi-0.124.2-py3-none-any.whl", hash = "sha256:6314385777a507bb19b34bd064829fddaea0eea54436deb632b5de587554055c"},
-    {file = "fastapi-0.124.2.tar.gz", hash = "sha256:72e188f01f360e2f59da51c8822cbe4bca210c35daaae6321b1b724109101c00"},
+    {file = "fastapi-0.124.4-py3-none-any.whl", hash = "sha256:6d1e703698443ccb89e50abe4893f3c84d9d6689c0cf1ca4fad6d3c15cf69f15"},
+    {file = "fastapi-0.124.4.tar.gz", hash = "sha256:0e9422e8d6b797515f33f500309f6e1c98ee4e85563ba0f2debb282df6343763"},
 ]
 
 [package.dependencies]
@@ -3161,4 +3161,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "6ee70d49caf903256a1b655e61e830ed9d83da94aeade9b8ccc9891aa26968b1"
+content-hash = "2a7c46f0cd6b41190ee6a206f7e3b3df1d8c390910e4506aae6113f866ceb46b"
